@@ -134,12 +134,12 @@ afterEvaluate { project ->
             configureReactNativePom pom
         }
     }
-}
 
-// Source - https://stackoverflow.com/a
-// Posted by act262, modified by community. See post 'Timeline' for change history
-// Retrieved 2025-12-05, License - CC BY-SA 4.0
-configurations.implementation.setCanBeResolved(true)
-configurations.api.setCanBeResolved(true)
-println configurations.implementation.resolve()
-println configurations.api.resolve()
+    // Source - https://stackoverflow.com/a
+    // Posted by act262, modified by community. See post 'Timeline' for change history
+    // Retrieved 2025-12-05, License - CC BY-SA 4.0
+    configurations.implementation.setCanBeResolved(true)
+    configurations.api.setCanBeResolved(true)
+    println configurations.implementation.resolve()
+    println configurations.api.resolve()
+}
