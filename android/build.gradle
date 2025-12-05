@@ -134,20 +134,4 @@ afterEvaluate { project ->
             configureReactNativePom pom
         }
     }
-
-    // Source - https://stackoverflow.com/a
-    // Posted by act262, modified by community. See post 'Timeline' for change history
-    // Retrieved 2025-12-05, License - CC BY-SA 4.0
-    def implementationResolvable = configurations.create('implementationResolvable') {
-        canBeResolved = true
-        canBeConsumed = false
-        extendsFrom(configurations.implementation)
-    }
-    def apiResolvable = configurations.create('apiResolvable') {
-        canBeResolved = true
-        canBeConsumed = false
-        extendsFrom(configurations.api)
-    }
-    println implementationResolvable.resolve()
-    println apiResolvable.resolve()
 }
