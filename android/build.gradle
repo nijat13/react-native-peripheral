@@ -99,12 +99,7 @@ afterEvaluate { project ->
     task androidJavadoc(type: Javadoc) {
         source = android.sourceSets.main.java.srcDirs
         classpath += files(android.bootClasspath)
-        // Use the first available variant's compile classpath
-        def variant = android.libraryVariants.find { it.name == 'release' } ?: android.libraryVariants.first()
-        if (variant) {
-            dependsOn variant.javaCompile
-            classpath += files(variant.javaCompile.classpath.files)
-        }
+        classpath += files(project.getConfigurations().getByName('implementation').asList())
         include '**/*.java'
     }
 
